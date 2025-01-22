@@ -13,11 +13,11 @@ def roman_to_int(roman_string):
     for char in reversed(roman_string):
         if char not in roman_values:
             return 0
-    current_value = roman_values[char]
-    if current_value >= prev_value:
-        total += current_value
-    else:
-        total -= current_value
-    prev_value = current_value
+        current_value = roman_values[char]
+        if current_value >= prev_value:
+            total += current_value
+        else:
+            total -= current_value
+        prev_value = current_value
 
     return total if 1 <= total <= 3999 else 0
