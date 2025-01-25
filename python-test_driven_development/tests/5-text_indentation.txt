@@ -1,0 +1,40 @@
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+>>> text_indentation("Hello. World? Yes: No.")
+Hello.
+<BLANKLINE>
+World?
+<BLANKLINE>
+Yes:
+<BLANKLINE>
+No.
+<BLANKLINE>
+
+>>> text_indentation("No punctuation")
+No punctuation
+
+>>> text_indentation("   Spaces.   At the beginning   ")
+Spaces.
+<BLANKLINE>
+At the beginning
+
+>>> text_indentation("Multiple...   Spaces?   Between   words:   Yes")
+Multiple.
+<BLANKLINE>
+.
+<BLANKLINE>
+.
+<BLANKLINE>
+Spaces?
+<BLANKLINE>
+Between   words:
+<BLANKLINE>
+Yes
+
+>>> text_indentation("")
+
+>>> try:
+...     text_indentation(12345)
+... except Exception as e:
+...     print(e)
+text must be a string
