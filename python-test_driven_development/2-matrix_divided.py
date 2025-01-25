@@ -31,6 +31,9 @@ def matrix_divided(matrix, div):
     if not matrix or not isinstance(matrix, list):
         raise TypeError(errorMessage)
 
+    if matrix == [] or matrix == [[]]:
+        raise TypeError(errorMessage)
+
     for row in matrix:
         if not isinstance(row, list):
             raise TypeError(errorMessage)
