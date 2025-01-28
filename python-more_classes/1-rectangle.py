@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """1-rectangle.py"""
 
+
 class Rectangle:
     """Represent a rectangle."""
 
