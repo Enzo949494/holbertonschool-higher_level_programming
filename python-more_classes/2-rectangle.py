@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""2-rectangle.py"""
+"""2-rectangle.py, define size and area of a rectangle"""
 
 
 class Rectangle:

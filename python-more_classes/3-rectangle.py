@@ -1,5 +1,7 @@
 #!/usr/bin/python3
-"""3-rectangle.py"""
+"""3-rectangle.py, define size and area of
+a rectangle and print it in a string"""
+
 
 class Rectangle:
     """Represent a rectangle."""

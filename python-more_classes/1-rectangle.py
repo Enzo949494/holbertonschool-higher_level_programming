@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""1-rectangle.py"""
+"""1-rectangle.py, define size of a rectangle"""
 
 
 class Rectangle:
