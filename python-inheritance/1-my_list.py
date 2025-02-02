@@ -2,7 +2,6 @@
 """This module creates a special list that can sort itself."""
 
 
-
 class MyList(list):
     """A list that knows how to order itself."""
 
