@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """This module has a function to check what type of thing an object is."""
 
+
 def is_kind_of_class(obj, a_class):
     """
     Checks if something is a specific type or related to it.
