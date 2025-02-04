@@ -4,13 +4,11 @@ class VerboseList(list):
         super().append(item)
         print(f"Added [{item}] to the list.")
 
-
     def extend(self, iterable):
         original_length = len(self)
         super().extend(iterable)
         items_added = len(self) - original_length
         print(f"Extended the list with [{items_added}] items.")
-
 
     def remove(self, item):
         if item in self:
@@ -18,7 +16,6 @@ class VerboseList(list):
             print(f"Removed [{item}] from the list.")
         else:
             print(f"[{item}] not found in the list.")
-
 
     def pop(self, index=-1):
         if self:
