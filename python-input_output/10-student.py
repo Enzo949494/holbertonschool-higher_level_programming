@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """create students file, choose what datas at see"""
 
+
 class Student:
     """Defines a student by first name, last name, and age."""
 
@@ -14,6 +15,8 @@ class Student:
         """Retrieves a dictionary"""
         if attrs is None:
             return self.__dict__
-        if isinstance(attrs, list) and all(isinstance(attr, str) for attr in attrs):
-            return {key: value for key, value in self.__dict__.items() if key in attrs}
+        if isinstance(attrs, list) and all(isinstance(attr, str)
+                                           for attr in attrs):
+            return {key: value for key, value in self.__dict__.items()
+                    if key in attrs}
         return self.__dict__

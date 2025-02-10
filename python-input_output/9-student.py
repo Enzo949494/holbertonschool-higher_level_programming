@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 """create a students class and can convert is datas to dict"""
 
-
 class Student:
     """Defines a student by first name, last name, and age."""
 
