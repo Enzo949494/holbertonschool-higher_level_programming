@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-
+"""transfo complex object in a dict"""
 
 class MyClass:
     """ My class """
