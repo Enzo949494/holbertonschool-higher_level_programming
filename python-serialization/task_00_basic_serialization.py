@@ -1,17 +1,22 @@
 #!/usr/bin/env python3
-from task_00_basic_serialization import load_and_deserialize, serialize_and_save_to_file
 
-data_to_serialize = {
-    "name": "John Doe",
-    "age": 30,
-    "city": "New York"
-}
 
-serialize_and_save_to_file(data_to_serialize, 'data.json')
+import json
 
-print("Data serialized and saved to 'data.json'.")
 
-deserialized_data = load_and_deserialize('data.json')
+def serialize_and_save_to_file(data, filename):
+    """
+    Serializes a Python dictionary into JSON and saves it to a file.
+    If the file already exists, it will be replaced
+    """
+    if not isinstance(data, dict):
+        raise TypeError("The 'data' parameter must be a dictionary.")
 
-print("Deserialized Data:")
-print(deserialized_data)
+    with open(filename, 'w', encoding='utf-8') as file:
+        json.dump(data, file)
+
+
+def load_and_deserialize(filename):
+    """Load and deserialize a JSON file to recreate a Python dictionary"""
+    with open(filename, 'r', encoding='utf-8') as file:
+        return json.load(file)
