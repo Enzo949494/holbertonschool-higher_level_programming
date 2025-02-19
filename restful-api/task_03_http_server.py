@@ -4,6 +4,8 @@ import socketserver
 
 
 PORT = 8000
+
+
 class SimpleAPIHandler(http.server.BaseHTTPRequestHandler):
     def do_GET(self):
         if self.path == '/':
