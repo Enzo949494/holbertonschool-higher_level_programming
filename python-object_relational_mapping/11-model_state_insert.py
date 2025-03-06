@@ -29,4 +29,13 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    # Create a new State object with
+    # Create a new State object with name "Louisiana"
+    new_state = State(name="Louisiana")
+    session.add(new_state)
+    session.commit()
+
+    # Print the ID of the newly created state
+    print(new_state.id)
+
+    # Close the session
+    session.close()
