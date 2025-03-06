@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Lists all cities of a state from the database hbtn_0e_4_usa.
+Lists all cities of a state passed as argument from the database hbtn_0e_4_usa.
 """
 
 import MySQLdb
@@ -9,11 +9,10 @@ import sys
 
 if __name__ == "__main__":
     """
-    Connects to the database, retrieves and displays all cities
-    of a given state, sorted by cities.id.
-    This version is safe from SQL injection.
+    Connects to the database, retrieves and displays all cities of a given state,
+    sorted by cities.id in ascending order.
     """
-    # Connect to the MySQL server on localhost at port 3306
+    # Connect to the MySQL server
     db = MySQLdb.connect(
         host="localhost",
         port=3306,
@@ -25,7 +24,7 @@ if __name__ == "__main__":
     # Create a cursor object to execute queries
     cursor = db.cursor()
 
-    # Execute the SQL query using parameterized queries to prevent injection
+    # SQL query to retrieve all cities of the given state
     query = """
         SELECT cities.name
         FROM cities
@@ -39,3 +38,8 @@ if __name__ == "__main__":
     rows = cursor.fetchall()
 
     # Print the city names as a comma-separated list
+    print(", ".join(row[0] for row in rows))
+
+    # Close the cursor and database connection
+    cursor.close()
+    db.close()
