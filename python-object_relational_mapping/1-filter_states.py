@@ -13,28 +13,36 @@ if __name__ == "__main__":
     mysql_password = sys.argv[2]
     database_name = sys.argv[3]
 
-    # Connect to the MySQL server
-    db = MySQLdb.connect(
-        host="localhost",
-        port=3306,
-        user=mysql_username,
-        passwd=mysql_password,
-        db=database_name
-    )
+    try:
+        # Connect to the MySQL server
+        db = MySQLdb.connect(
+            host="localhost",
+            port=3306,
+            user=mysql_username,
+            passwd=mysql_password,
+            db=database_name
+        )
 
-    # Create a cursor object to execute queries
-    cursor = db.cursor()
+        # Create a cursor object to execute queries
+        cursor = db.cursor()
 
-    # Execute the SQL query to retrieve states starting with 'N'
-    cursor.execute("SELECT * FROM states WHERE name LIKE 'N%' ORDER BY id ASC")
+        # Execute the SQL query to retrieve states starting with 'N'
+        query = "SELECT * FROM states WHERE name LIKE BINARY 'N%' ORDER BY id ASC"
+        cursor.execute(query)
 
-    # Fetch all rows from the executed query
-    rows = cursor.fetchall()
+        # Fetch all rows from the executed query
+        rows = cursor.fetchall()
 
-    # Print each row
-    for row in rows:
-        print(row)
+        # Print each row
+        for row in rows:
+            print(row)
 
-    # Close the cursor and database connection
-    cursor.close()
-    db.close()
+    except Exception as e:
+        print(f"Error: {e}")
+
+    finally:
+        # Close the cursor and database connection
+        if 'cursor' in locals():
+            cursor.close()
+        if 'db' in locals():
+            db.close()
