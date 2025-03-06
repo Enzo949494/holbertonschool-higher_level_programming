@@ -9,7 +9,8 @@ import sys
 
 if __name__ == "__main__":
     """
-    Connects to the database, retrieves and displays all cities of a given state,
+    Connects to the database,
+    retrieves and displays all cities of a given state,
     sorted by cities.id in ascending order.
     """
     # Connect to the MySQL server
